@@ -34,18 +34,17 @@ public class PlantaNuclear {
 
     public void estaEnPeligro(Integer cantidadDeUranio, Homero homero) {
 
-
-        if((cantidadDeUranio > 10000 && empleadoControl instanceof Homero && empleadoControl.estaDistraido()) || duenio.estaPobre()) {
-                System.out.println("La planta nuclear está en peligro!!");
+        if((cantidadDeUranio > 10000 && homero.estaDistraido()) || duenio.estaPobre()) {
+            System.out.println("La planta nuclear está en peligro!!");
         }
 
-        if((cantidadDeUranio > 10000 && !homero.estaDistraido()) && !duenio.estaPobre()
-        || (cantidadDeUranio < 10000 && homero.estaDistraido() && !duenio.estaPobre())
-        || cantidadDeUranio > 10000 && homero.estaDistraido() && !duenio.estaPobre()) {
+        if((cantidadDeUranio <= 10000 && homero.estaDistraido() && !duenio.estaPobre())
+                || cantidadDeUranio > 10000 && homero.estaDistraido() && !duenio.estaPobre()) {
             System.out.println("La planta nuclear NO está en peligro!! El pato balancín cuida la planta");
         }
 
-        if((cantidadDeUranio < 10000 && !homero.estaDistraido() && !duenio.estaPobre())) {
+        if((cantidadDeUranio > 10000 && !homero.estaDistraido() && !duenio.estaPobre())
+                || (cantidadDeUranio <= 10000 && !homero.estaDistraido() && !duenio.estaPobre())) {
             System.out.println("La planta nuclear NO está en peligro");
         }
 
